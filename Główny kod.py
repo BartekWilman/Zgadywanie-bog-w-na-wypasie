@@ -63,6 +63,5 @@ while chose != "4":
         
     elif chose == "4":
         print("Dowidzenia")
-        print(rank)
 
 input()
