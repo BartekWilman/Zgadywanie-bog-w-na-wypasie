@@ -1,11 +1,8 @@
 import random, funkcje
 rank = []
 chose = None
-GODS =["Khorne", "Slanesh", "Nurgle",
-       "Tzeentch", "Malal", "Khaine",
-       "Sigmar", "Morr", "Ulryk",
-       "Grungi", "Grimir", "Valaya",
-       "Rogaty Szczur", "Matka Nocy", "Ursun"]
+text_file = open("gods.txt", "r")
+GODS = text_file.readlines()
 
 print("\t\t\t\abogowie warhammera".upper())
 
@@ -26,9 +23,10 @@ while chose != "4":
             
             hint = 0
             god = funkcje.mix(GODS)
+            god = god[0:-1]
             
             new_god = funkcje.jumble(god)
-            print("Wylosowałeś tego boga \"", new_god.upper())
+            print("\nWylosowałeś tego boga \"", new_god.upper())
             print("Odgadniesz jego imię?")
             print("Aby zakończyć grę bez zgadywania naciśnij Enter")
 
@@ -36,11 +34,11 @@ while chose != "4":
 
             while answer != god and answer != "":
                 
-                answer = input("Moja odpowiedź to: ")
+                answer = input("\nMoja odpowiedź to: ")
             
                 if answer != god and answer != "":
                     print("Niestety nie")
-                    ask = input("Chcesz podpowiedź? (Tak/Nie) ")
+                    ask = input("\nChcesz podpowiedź? (Tak/Nie) ")
 
                     if ask == "Tak":
                         print("Imię tego boga zaczyna się na", god[0], "a kończy na", god[-1])
@@ -54,7 +52,7 @@ while chose != "4":
                     score = len(god) * 10 - float(hint * 10)
                     points += score
 
-        player_name = input("Jak Cię zwą wybrańcze bogów? ")
+        player_name = input("\nJak Cię zwą wybrańcze bogów? ")
         entry = (player_name, points)
         rank.append(entry)
 
