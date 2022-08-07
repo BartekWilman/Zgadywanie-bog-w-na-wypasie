@@ -13,6 +13,15 @@ def jumble(i):
         i = i[:j]+i[(j+1):]
         g = g.upper()
     return g
+
+def instruction():
+    print("""
+    Bogowie domagają się twojej atencji wybrańcze.
+    Najpierw los wybierze, którego Boga imię masz odgadnąć.
+    Zostaną Ci pokazane wszystkie runy, które tworzą jego imię,
+    lecz w losowej kolejności. Jeśli okaże się to zatrudne,
+    możesz poprosić o wskazówkę, lecz łaski bogów nie będą aż tak hojne.""")
+          
         
         
     
