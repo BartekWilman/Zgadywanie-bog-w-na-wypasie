@@ -53,13 +53,20 @@ while chose != "4":
                     points += score
 
         player_name = input("\nJak Cię zwą wybrańcze bogów? ")
-        entry = (player_name, points)
+        entry = (points, player_name)
         rank.append(entry)
+        rank.sort(reverse = True)
+        rank = rank[:5]
 
         print("Uzyskałeś łącznie", points, "punktów.")
 
     elif chose == "2":
         funkcje.instruction()
+
+    elif chose == "3":
+        for entry in rank:
+            points, player_name = entry
+            print(points, "\t", player_name)
         
     elif chose == "4":
         print("Dowidzenia")
