@@ -3,6 +3,7 @@ rank = []
 chose = None
 text_file = open("gods.txt", "r")
 GODS = text_file.readlines()
+text_file.close()
 
 print("\t\t\t\abogowie warhammera".upper())
 
