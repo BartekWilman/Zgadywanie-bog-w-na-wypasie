@@ -37,21 +37,23 @@ while chose != "4":
             while answer != god and answer != "":
                 
                 answer = input("\nMoja odpowiedź to: ") #pobranie odpowiedzi
-            
+
+                #błędna odpowiedź
                 if answer != god and answer != "":
                     print("Niestety nie")
                     ask = input("\nChcesz podpowiedź? (Tak/Nie) ")
-
+                    
+                    #pytanie o podpowiedź
                     if ask == "Tak":
                         print("Imię tego boga zaczyna się na", god[0], "a kończy na", god[-1])
                         hint += (len(god) / 3)
 
                     else:
                         print("Słusznie, szkoda punktów")
-
+                #poprawna odpowiedź
                 elif answer == god:
                     print("Brawo, prawidłowa odpowiedź to", god, ".")
-                    score = len(god) * 10 - float(hint * 10)
+                    score = ((len(god) * 10) - (float(hint * 10)))
                     points += score
 
         player_name = input("\nJak Cię zwą wybrańcze bogów? ")
