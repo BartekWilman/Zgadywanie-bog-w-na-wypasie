@@ -1,4 +1,4 @@
-import random, funkcje
+import funkcje
 rank = []
 chose = None
 text_file = open("gods.txt", "r")
@@ -13,20 +13,21 @@ menu = """  WYBIER CO CHCESZ ZROBIĆ
         2 - instrukcja
         3 - ranking
         4 - koniec gry"""
-
+# GŁÓWNA PĘTLA
 while chose != "4":
     print(menu)
     chose = input("Chcę: ")
-    
+
+    #ROZPOCZĘCIE NOWEJ GRY
     if chose == "1":
         points = 0
         for i in range(3):
             
             hint = 0
-            god = funkcje.mix(GODS)
-            god = god[0:-1]
+            god = funkcje.mix(GODS) #wybór boga
+            god = god[0:-1]     #ta linia kody skraca pobrany string o znak '\n' lub spację jeśli to ostatni z pliku txt
             
-            new_god = funkcje.jumble(god)
+            new_god = funkcje.jumble(god) #wymieszanie liter w imieniu boga
             print("\nWylosowałeś tego boga \"", new_god.upper())
             print("Odgadniesz jego imię?")
             print("Aby zakończyć grę bez zgadywania naciśnij Enter")
@@ -35,7 +36,7 @@ while chose != "4":
 
             while answer != god and answer != "":
                 
-                answer = input("\nMoja odpowiedź to: ")
+                answer = input("\nMoja odpowiedź to: ") #pobranie odpowiedzi
             
                 if answer != god and answer != "":
                     print("Niestety nie")
